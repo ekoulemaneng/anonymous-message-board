@@ -1,0 +1,17 @@
+doctype html
+html
+    include includes/header-page.pug
+    body
+        include includes/header-body.pug
+        main.container
+            .btn-group.d-flex.justify-content-around
+                button.btn.btn-outline-dark.mx-3#display-board-forms(type='button') Board Forms
+                button.btn.btn-dark.mx-3#display-thread-forms(type='button') Thread Forms
+                button.btn.btn-dark.mx-3#display-reply-forms(type='button') Reply Forms
+            include includes/board-forms.pug
+            include includes/thread-forms.pug
+            include includes/reply-forms.pug
+        include includes/modal.pug
+        include includes/footer-body.pug
+        include includes/bootstrap-scripts.pug
+        script(src='/scripts/script.js')

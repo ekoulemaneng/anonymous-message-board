@@ -1,0 +1,27 @@
+.border.border-dark.rounded.px-1.py-1.my-2#board-forms
+    form.border.border-secondary.my-2.px-2#add-board
+        h1.h5.text-center Add a new board
+        .form-group.mb-1
+            input.form-control.board-title(type='text' placeholder='board title' pattern='(\w|\.|-){5,}' required)
+        .form-group.mb-1
+            input.form-control.add-board-password(type='password' placeholder='password to delete' required)
+        .form-group.mb-1.text-center
+            button.btn.btn-secondary(type='submit') Add
+    form.border.border-secondary.my-2.px-2#get-boards(action='/api/boards' method='get')
+        h1.h5.text-center Get boards
+        .form-group.mb-1.text-center
+            button.btn.btn-secondary(type='submit') Get
+    form.border.border-secondary.my-2.px-2#report-board
+        h1.h5.text-center Report a board
+        .form-group.mb-1
+            input.form-control.board-title(type='text' placeholder='board title' required)
+        .form-group.mb-1.text-center
+            button.btn.btn-secondary(type='submit') Report
+    form.border.border-danger.mt-2.px-2#delete-board
+        h1.h5.text-center.text-danger Delete a board
+        .form-group.mb-1
+            input.form-control.board-title.border.border-danger(type='text' placeholder='board title' required)
+        .form-group.mb-1
+            input.form-control.add-board-password.border.border-danger(type='password' placeholder='password to delete' required)
+        .form-group.mb-1.text-center
+            button.btn.btn-danger(type='submit') Delete

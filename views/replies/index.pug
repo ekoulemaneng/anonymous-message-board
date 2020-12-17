@@ -1,0 +1,39 @@
+doctype html
+html
+    include ../includes/header-page.pug
+    body
+        include ../includes/header-body.pug
+        main.container
+            h1.bg-info.py-1.pl-2.text-light #{board}
+            h2.bg-primary.py-1.pl-2.text-white #{threadText}
+            h3.h4.bg-secondary.text-center.py-1.text-white List of replies
+            .border.border-dark.rounded.px-1.py-1#list-of-replies
+                each reply in replies
+                    .reply-item.border.border-info.p-1.mb-1
+                        .reply-text #{reply.replyText}
+                        .d-flex.justify-content-around.buttons.my-2
+                            button.btn.btn-outline-secondary.btn-sm.reply-report-button(type='button' data-board=board data-thread=threadId data-reply=reply.replyId) Report the reply
+                            button.btn.btn-outline-secondary.btn-sm.reply-delete-button(type='button') Show the deletion form
+                        form.reply-deletion-form.d-none.border.border-danger.mt-2.px-2
+                            h1.h5.m-1.text-center.text-danger Delete the reply
+                            input.board(type='text' value=board required hidden)
+                            input.thread(type='text' value=threadId required hidden)
+                            input.reply(type='text' value=reply.replyId required hidden)
+                            .form-group.mb-1
+                                input.form-control.password.border.border-danger(type='password' placeholder='password to delete' required)
+                            .form-group.mb-1.text-center
+                                button.btn.btn-danger(type='submit') Delete
+            form.border.border-primary.my-2.px-2#add-reply
+                h1.h5.text-center Add a new reply
+                input.board(type='text' value=board required hidden)
+                input.thread(type='text' value=threadId required hidden)
+                .form-group.mb-1
+                    textarea.form-control.text(placeholder='text reply' required)
+                .form-group.mb-1
+                    input.form-control.password(type='password' placeholder='password to delete' required)
+                .form-group.mb-1.text-center
+                    button.btn.btn-secondary(type='submit') Add
+        include ../includes/modal.pug
+        include ../includes/footer-body.pug
+        include ../includes/bootstrap-scripts.pug
+        script(src='/scripts/reply-script.js')

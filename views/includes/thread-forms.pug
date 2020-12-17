@@ -1,0 +1,35 @@
+#thread-forms.d-none.border.border-dark.rounded.px-1.py-1.my-2
+    form.border.border-secondary.my-2.px-2#add-thread
+        h1.h5.text-center Add a new thread
+        .form-group.mb-1
+            input.form-control.board-title(type='text' placeholder='board title' required)
+        .form-group.mb-1
+            input.form-control.thread-text(type='text' placeholder='thread text' required)
+        .form-group.mb-1
+            input.form-control.password(type='password' placeholder='password to delete' required)
+        .form-group.mb-1.text-center
+            button.btn.btn-secondary(type='submit') Add
+    form.border.border-secondary.my-2.px-2#get-threads
+        h1.h5.text-center Get threads
+        .form-group.mb-1
+            input.form-control.board-title(type='text' placeholder='board title' required)
+        .form-group.mb-1.text-center
+            button.btn.btn-secondary(type='submit') Get
+    form.border.border-secondary.my-2.px-2#report-thread
+        h1.h5.text-center Report a thread
+        .form-group.mb-1
+            input.form-control.board-title(type='text' placeholder='board title' required)
+        .form-group.mb-1
+            input.form-control.thread-id(type='text' placeholder='thread id')
+        .form-group.mb-1.text-center
+            button.btn.btn-secondary(type='submit') Report
+    form.border.border-danger.mt-2.px-2#delete-thread
+        h1.h5.text-center Delete a thread
+        .form-group.mb-1
+            input.form-control.board-title.border.border-danger(type='text' placeholder='board title')
+        .form-group.mb-1
+            input.form-control.thread-id.border.border-danger(type='text' placeholder='thread id')
+        .form-group.mb-1
+            input.form-control.password.border.border-danger(type='password' placeholder='password to delete')
+        .form-group.mb-1.text-center
+            button.btn.btn-danger(type='submit') Delete

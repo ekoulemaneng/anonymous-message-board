@@ -1,0 +1,33 @@
+doctype html
+html
+    include ../includes/header-page.pug
+    body
+        include ../includes/header-body.pug
+        main.container
+            h1.h3.bg-secondary.text-center.py-1.text-white List of boards
+            .border.border-dark.rounded.px-1.py-1#list-of-boards
+                each board in boards
+                    div.board-item.border.border-secondary.p-1.mb-1(data-title=board.title)
+                        h2.h4.pl-3
+                            a.text-dark.text-decoration-none(href='/api/threads/'+board.title)= board.title
+                        .d-flex.justify-content-around.buttons
+                            button.btn.btn-outline-secondary.btn-sm.report-button(type='button') Report
+                            button.btn.btn-outline-secondary.btn-sm.delete-button(type='button') Show the deletion form
+                        form.deletion-form.d-none.border.border-danger.mt-2.px-2
+                            h1.h5.m-1.text-center.text-danger Delete the board
+                            .form-group.mb-1
+                                input.form-control.add-board-password.border.border-danger(type='password' placeholder='password to delete' required)
+                            .form-group.mb-1.text-center
+                                button.btn.btn-danger(type='submit') Delete
+            form.border.border-primary.my-2.px-2#add-board
+                h1.h5.text-center Add a new board
+                .form-group.mb-1
+                    input.form-control.board-title(type='text' placeholder='board title' pattern='(\w|\.|-){5,}' required)
+                .form-group.mb-1
+                    input.form-control.add-board-password(type='password' placeholder='password to delete' required)
+                .form-group.mb-1.text-center
+                    button.btn.btn-secondary(type='submit') Add
+        include ../includes/modal.pug
+        include ../includes/footer-body.pug
+        include ../includes/bootstrap-scripts.pug
+        script(src='/scripts/board-script.js')

@@ -1,0 +1,43 @@
+#reply-forms.d-none.border.border-dark.rounded.px-1.py-1.my-2
+    form.border.border-secondary.my-2.px-2#add-reply
+        h1.h5.text-center Add a new reply
+        .form-group.mb-1
+            input.form-control.board-title(type='text' placeholder='board title' required)
+        .form-group.mb-1
+            input.form-control.thread-id(type='text' placeholder='thread id' required)
+        .form-group.mb-1
+            textarea.form-control.reply-text(rows='3' required)
+        .form-group.mb-1
+            input.form-control.password(type='password' placeholder='password to delete' required)
+        .form-group.text-center.mb-1
+            button.btn.btn-secondary(type='submit') Add
+    form.border.border-secondary.my-2.px-2#get-replies(action='' method='get')
+        h1.h5.text-center Get replies
+        .form-group.mb-1
+            input.form-control.board-title(type='text' placeholder='board title' required)
+        .form-group.mb-1
+            input.form-control.thread-id(type='text' placeholder='thread id' required)
+        .form-group.text-center.mb-1
+            button.btn.btn-secondary(type='submit') Get
+    form.border.border-secondary.my-2.px-2#report-reply
+        h1.h5.text-center Report a reply
+        .form-group.mb-1
+            input.form-control.board-title(type='text' placeholder='board title' required)
+        .form-group.mb-1
+            input.form-control.thread-id(type='text' placeholder='thread id' required)
+        .form-group.mb-1
+            input.form-control.reply-id(type='text' placeholder='reply id' required)
+        .form-group.text-center.mb-1
+            button.btn.btn-secondary(type='submit') Report
+    form.border.border-danger.my-2.px-2#delete-reply
+        h1.h5.text-center Delete a reply
+        .form-group.mb-1
+            input.form-control.board-title.border.border-danger(type='text' placeholder='board title' required)
+        .form-group.mb-1
+            input.form-control.thread-id.border.border-danger(type='text' placeholder='thread id' required)
+        .form-group.mb-1
+            input.form-control.reply-id.border.border-danger(type='text' placeholder='reply id' required)
+        .form-group.mb-1
+            input.form-control.password.border.border-danger(type='password' placeholder='password to delete' required)
+        .form-group.text-center.mb-1
+            button.btn.btn-secondary(type='submit') Delete
